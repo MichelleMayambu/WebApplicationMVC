@@ -25,6 +25,11 @@ namespace WebApplication2.Controllers
         {
             _context.Dispose();
         }
+
+        public ActionResult New()
+        {
+            return View();
+        }
         public ActionResult CustomerList()
         {
             /*Include() in order to accomodate the reference class membership
