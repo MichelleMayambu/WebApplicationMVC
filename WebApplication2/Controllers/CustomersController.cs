@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using WebApplication2.DAL;
 using WebApplication2.Models;
+using WebApplication2.ViewModels;
 
 namespace WebApplication2.Controllers
 {
@@ -28,7 +29,13 @@ namespace WebApplication2.Controllers
 
         public ActionResult New()
         {
-            return View();
+            var membershiptTypes = _context.MembershipTypes.ToList();
+            var viewmodel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershiptTypes
+            };
+
+            return View(viewmodel);
         }
         public ActionResult CustomerList()
         {
@@ -36,8 +43,7 @@ namespace WebApplication2.Controllers
              so that the customer view can have access to it's entities 
              ToList() added in order to iterate through list*/
             var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-            
-     
+          
 
             return View(customers);
         }
