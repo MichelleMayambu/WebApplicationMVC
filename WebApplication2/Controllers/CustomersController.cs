@@ -47,7 +47,19 @@ namespace WebApplication2.Controllers
 
             return View(customers);
         }
-
+        /*to make sure that this action only runs as a post
+         * MODEL BINDING *
+         MVC framework will bind Customer to the request data*/
+        [HttpPost]
+        public ActionResult Create(Customer customer)
+        {
+          /*generate sql statements at runtime and make
+           alterations to database ans save new entry data on
+           on the form*/
+            _context.Customers.Add(customer);
+            _context.SaveChanges();
+            return RedirectToAction("CustomerList", "Customers");
+        }
        
         //GET: CustomersDetails//
         public ActionResult CustomerDetails(int? id)
