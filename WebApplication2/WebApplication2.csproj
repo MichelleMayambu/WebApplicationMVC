@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,16 +46,54 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -126,13 +165,90 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="DAL\Initializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001100852401_initialMigration.cs" />
+    <Compile Include="Migrations\202001100852401_initialMigration.designer.cs">
+      <DependentUpon>202001100852401_initialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001100900152_addmembershiptype.cs" />
+    <Compile Include="Migrations\202001100900152_addmembershiptype.designer.cs">
+      <DependentUpon>202001100900152_addmembershiptype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001100906596_populateMembershipttypes.cs" />
+    <Compile Include="Migrations\202001100906596_populateMembershipttypes.designer.cs">
+      <DependentUpon>202001100906596_populateMembershipttypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001100940160_addNameToMembershipType.cs" />
+    <Compile Include="Migrations\202001100940160_addNameToMembershipType.designer.cs">
+      <DependentUpon>202001100940160_addNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001100943069_populateNamesInMembershipType.cs" />
+    <Compile Include="Migrations\202001100943069_populateNamesInMembershipType.designer.cs">
+      <DependentUpon>202001100943069_populateNamesInMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001100951510_populateNameInMembershiptypes.cs" />
+    <Compile Include="Migrations\202001100951510_populateNameInMembershiptypes.designer.cs">
+      <DependentUpon>202001100951510_populateNameInMembershiptypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101003225_populateNames.cs" />
+    <Compile Include="Migrations\202001101003225_populateNames.designer.cs">
+      <DependentUpon>202001101003225_populateNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101016240_addBirthdateToCustomer.cs" />
+    <Compile Include="Migrations\202001101016240_addBirthdateToCustomer.designer.cs">
+      <DependentUpon>202001101016240_addBirthdateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101020005_changedatatypefordate.cs" />
+    <Compile Include="Migrations\202001101020005_changedatatypefordate.designer.cs">
+      <DependentUpon>202001101020005_changedatatypefordate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101024358_populateBirthDate.cs" />
+    <Compile Include="Migrations\202001101024358_populateBirthDate.designer.cs">
+      <DependentUpon>202001101024358_populateBirthDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101127247_changedatatypeofBirthdate.cs" />
+    <Compile Include="Migrations\202001101127247_changedatatypeofBirthdate.designer.cs">
+      <DependentUpon>202001101127247_changedatatypeofBirthdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101154172_AddMovieEntity.cs" />
+    <Compile Include="Migrations\202001101154172_AddMovieEntity.designer.cs">
+      <DependentUpon>202001101154172_AddMovieEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101203097_AddGenrerelationshipToMOvies.cs" />
+    <Compile Include="Migrations\202001101203097_AddGenrerelationshipToMOvies.designer.cs">
+      <DependentUpon>202001101203097_AddGenrerelationshipToMOvies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101221505_AddGenrerelationshipToMOvies1.cs" />
+    <Compile Include="Migrations\202001101221505_AddGenrerelationshipToMOvies1.designer.cs">
+      <DependentUpon>202001101221505_AddGenrerelationshipToMOvies1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101230075_movieUpdatedatatype.cs" />
+    <Compile Include="Migrations\202001101230075_movieUpdatedatatype.designer.cs">
+      <DependentUpon>202001101230075_movieUpdatedatatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001101232533_populategenretypes.cs" />
+    <Compile Include="Migrations\202001101232533_populategenretypes.designer.cs">
+      <DependentUpon>202001101232533_populategenretypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\GenreType.cs" />
+    <Compile Include="Models\MembershipType.cs" />
+    <Compile Include="Models\Movie.cs" />
+    <Compile Include="DAL\MyDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup1.cs" />
+    <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-pulse.css" />
+    <Content Include="Content\bootstrap-sandstone.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -154,7 +270,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -168,10 +286,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Movies\Random.cshtml" />
+    <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Customers\CustomerList.cshtml" />
+    <Content Include="Views\Customers\CustomerDetails.cshtml" />
+    <Content Include="Views\Movies\MovieDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -185,6 +307,56 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202001100852401_initialMigration.resx">
+      <DependentUpon>202001100852401_initialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001100900152_addmembershiptype.resx">
+      <DependentUpon>202001100900152_addmembershiptype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001100906596_populateMembershipttypes.resx">
+      <DependentUpon>202001100906596_populateMembershipttypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001100940160_addNameToMembershipType.resx">
+      <DependentUpon>202001100940160_addNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001100943069_populateNamesInMembershipType.resx">
+      <DependentUpon>202001100943069_populateNamesInMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001100951510_populateNameInMembershiptypes.resx">
+      <DependentUpon>202001100951510_populateNameInMembershiptypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101003225_populateNames.resx">
+      <DependentUpon>202001101003225_populateNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101016240_addBirthdateToCustomer.resx">
+      <DependentUpon>202001101016240_addBirthdateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101020005_changedatatypefordate.resx">
+      <DependentUpon>202001101020005_changedatatypefordate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101024358_populateBirthDate.resx">
+      <DependentUpon>202001101024358_populateBirthDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101127247_changedatatypeofBirthdate.resx">
+      <DependentUpon>202001101127247_changedatatypeofBirthdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101154172_AddMovieEntity.resx">
+      <DependentUpon>202001101154172_AddMovieEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101203097_AddGenrerelationshipToMOvies.resx">
+      <DependentUpon>202001101203097_AddGenrerelationshipToMOvies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101221505_AddGenrerelationshipToMOvies1.resx">
+      <DependentUpon>202001101221505_AddGenrerelationshipToMOvies1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101230075_movieUpdatedatatype.resx">
+      <DependentUpon>202001101230075_movieUpdatedatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001101232533_populategenretypes.resx">
+      <DependentUpon>202001101232533_populategenretypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -219,7 +391,10 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
