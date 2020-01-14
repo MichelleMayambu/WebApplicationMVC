@@ -27,10 +27,10 @@ namespace WebApplication2.Controllers
             _context.Dispose();
         }
 
-        public ActionResult New()
+        public ActionResult CustomerForm()
         {
             var membershiptTypes = _context.MembershipTypes.ToList();
-            var viewmodel = new NewCustomerViewModel
+            var viewmodel = new CustomerFormViewModel
             {
                 MembershipTypes = membershiptTypes
             };
@@ -59,8 +59,20 @@ namespace WebApplication2.Controllers
             _context.Customers.Add(customer);
             _context.SaveChanges();
             return RedirectToAction("CustomerList", "Customers");
+        } 
+       public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+            if (customer == null)
+                return HttpNotFound();
+            var viewModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+
+            };
+            return View("CustomerForm", viewModel);
         }
-       
         //GET: CustomersDetails//
         public ActionResult CustomerDetails(int? id)
         {
