@@ -49,14 +49,27 @@ namespace WebApplication2.Controllers
         }
         /*to make sure that this action only runs as a post
          * MODEL BINDING *
-         MVC framework will bind Customer to the request data*/
+         MVC framework will bind Customer to the request data
+         create action is the action happening on the form that was described in the view*/
         [HttpPost]
-        public ActionResult Create(Customer customer)
+        public ActionResult Save(Customer customer)
         {
+          
+            if (customer.Id == 0)
+                _context.Customers.Add(customer);
+            else
+            {
+                var customerInDb = _context.Customers.Single(c => c.Id == customer.Id);
+                /* manually set customer objects*/
+                customerInDb.Name = customer.Name;
+                customerInDb.BirthDate = customer.BirthDate;
+                customerInDb.MembershipTypeId = customer.MembershipTypeId;
+                customerInDb.IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter;
+            }
           /*generate sql statements at runtime and make
            alterations to database ans save new entry data on
            on the form*/
-            _context.Customers.Add(customer);
+           
             _context.SaveChanges();
             return RedirectToAction("CustomerList", "Customers");
         } 
@@ -71,6 +84,8 @@ namespace WebApplication2.Controllers
                 MembershipTypes = _context.MembershipTypes.ToList()
 
             };
+            /*this will return the form with the customer details
+             based on the customerID*/
             return View("CustomerForm", viewModel);
         }
         //GET: CustomersDetails//

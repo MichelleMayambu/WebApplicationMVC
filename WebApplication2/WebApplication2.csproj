@@ -236,15 +236,40 @@
     <Compile Include="Migrations\202001101232533_populategenretypes.designer.cs">
       <DependentUpon>202001101232533_populategenretypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001151142137_AddedNewColumnPropertiesToDatabases.cs" />
+    <Compile Include="Migrations\202001151142137_AddedNewColumnPropertiesToDatabases.designer.cs">
+      <DependentUpon>202001151142137_AddedNewColumnPropertiesToDatabases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151221365_AddRequiredToGenreTypeId.cs" />
+    <Compile Include="Migrations\202001151221365_AddRequiredToGenreTypeId.designer.cs">
+      <DependentUpon>202001151221365_AddRequiredToGenreTypeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151225556_AddRequiredToGenreTypeId1.cs" />
+    <Compile Include="Migrations\202001151225556_AddRequiredToGenreTypeId1.designer.cs">
+      <DependentUpon>202001151225556_AddRequiredToGenreTypeId1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151231439_AddRequiredToGenreTypeId2.cs" />
+    <Compile Include="Migrations\202001151231439_AddRequiredToGenreTypeId2.designer.cs">
+      <DependentUpon>202001151231439_AddRequiredToGenreTypeId2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151249580_DeleteMovieTable.cs" />
+    <Compile Include="Migrations\202001151249580_DeleteMovieTable.designer.cs">
+      <DependentUpon>202001151249580_DeleteMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151254457_AddBackMoviesTable.cs" />
+    <Compile Include="Migrations\202001151254457_AddBackMoviesTable.designer.cs">
+      <DependentUpon>202001151254457_AddBackMoviesTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GenreType.cs" />
     <Compile Include="Models\MembershipType.cs" />
-    <Compile Include="Models\Movie.cs" />
     <Compile Include="DAL\MyDBContext.cs" />
+    <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup1.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -293,6 +318,7 @@
     <Content Include="Views\Customers\CustomerDetails.cshtml" />
     <Content Include="Views\Movies\MovieDetails.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +384,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001101232533_populategenretypes.resx">
       <DependentUpon>202001101232533_populategenretypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151142137_AddedNewColumnPropertiesToDatabases.resx">
+      <DependentUpon>202001151142137_AddedNewColumnPropertiesToDatabases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151221365_AddRequiredToGenreTypeId.resx">
+      <DependentUpon>202001151221365_AddRequiredToGenreTypeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151225556_AddRequiredToGenreTypeId1.resx">
+      <DependentUpon>202001151225556_AddRequiredToGenreTypeId1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151231439_AddRequiredToGenreTypeId2.resx">
+      <DependentUpon>202001151231439_AddRequiredToGenreTypeId2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151249580_DeleteMovieTable.resx">
+      <DependentUpon>202001151249580_DeleteMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151254457_AddBackMoviesTable.resx">
+      <DependentUpon>202001151254457_AddBackMoviesTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

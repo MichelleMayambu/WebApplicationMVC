@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -12,12 +13,25 @@ namespace WebApplication2.Models
         [Required]
         [StringLength(200)]
         public string Name { get; set; }
+
+        [Required]
         public DateTime? ReleaseDate { get; set; }
+
+
         public DateTime? DateAdded { get; set; }
+
+        [Required]
         public int NumberInStock { get; set; }
+
+
         public GenreType GenreType { get; set; }
+
+        [Display(Name = "Genre")]
+        [Required]
         public int GenreTypeId { get; set; }
+
 
 
     }
 }
+
