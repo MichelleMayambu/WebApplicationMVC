@@ -14,6 +14,7 @@ namespace WebApplication2.Models
         [StringLength(255)]
         public string Name { get; set; }
 
+        [Min18YearsMember]
         public DateTime? BirthDate { get; set; }
 
         public string Gender { get; set; }
