@@ -9,12 +9,12 @@ namespace WebApplication2.ViewModels
     public class MovieFormViewModel
     {
         public IEnumerable<GenreType> GenreTypes { get; set; }
-        public Movie Movies { get; set; }
+        public Movie Movie { get; set; }
         public string Title
         {
             get
             {
-                if (Movies != null && Movies.Id != 0)
+                if (Movie != null && Movie.Id != 0)
                   
 
                     return "Edit Movie";

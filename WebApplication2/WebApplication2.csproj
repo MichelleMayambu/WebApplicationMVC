@@ -288,6 +288,10 @@
     <Compile Include="Migrations\202001151801423_AddRequireAttributeToMovies.designer.cs">
       <DependentUpon>202001151801423_AddRequireAttributeToMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001201024427_AddRequiredToFieldsInMovieDbSet.cs" />
+    <Compile Include="Migrations\202001201024427_AddRequiredToFieldsInMovieDbSet.designer.cs">
+      <DependentUpon>202001201024427_AddRequiredToFieldsInMovieDbSet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -452,6 +456,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001151801423_AddRequireAttributeToMovies.resx">
       <DependentUpon>202001151801423_AddRequireAttributeToMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001201024427_AddRequiredToFieldsInMovieDbSet.resx">
+      <DependentUpon>202001201024427_AddRequiredToFieldsInMovieDbSet.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

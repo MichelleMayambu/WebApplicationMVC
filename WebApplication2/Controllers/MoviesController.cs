@@ -36,19 +36,31 @@ namespace WebApplication2.Controllers
 
 
         }
-        public ActionResult MovieForm()
+        public ActionResult New()
         {
             var genreTypes = _context.GenreTypes.ToList();
             var viewModel = new MovieFormViewModel
             {
+                Movie = new Movie(),
                 GenreTypes = genreTypes
             };
             return View("MovieForm", viewModel);
         }
+       
         [HttpPost]
         public ActionResult Save(Movie movie)
         {
-           
+            //Model.State to check validation from the model
+            if (!ModelState.IsValid)
+            {
+                var viewModel = new MovieFormViewModel
+                {
+                    Movie = movie,
+                    GenreTypes = _context.GenreTypes.ToList()
+                };
+
+                return View("MovieForm", viewModel);
+            }
             if (movie.Id == 0)
             {
                 movie.DateAdded = DateTime.Now;
@@ -76,7 +88,7 @@ namespace WebApplication2.Controllers
                 return HttpNotFound();
             var viewModel = new MovieFormViewModel
             {
-                Movies = movies,
+                Movie = movies,
                 GenreTypes = _context.GenreTypes.ToList()
 
             };
