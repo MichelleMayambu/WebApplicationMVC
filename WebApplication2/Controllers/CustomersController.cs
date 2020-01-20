@@ -63,6 +63,7 @@ namespace WebApplication2.Controllers
          MVC framework will bind Customer to the request data
          create action is the action happening on the form that was described in the view*/
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Customer customer)
         {
             //Model.State to check validation from the model
