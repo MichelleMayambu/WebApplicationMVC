@@ -260,6 +260,34 @@
     <Compile Include="Migrations\202001151254457_AddBackMoviesTable.designer.cs">
       <DependentUpon>202001151254457_AddBackMoviesTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001151439331_FixingMovietable.cs" />
+    <Compile Include="Migrations\202001151439331_FixingMovietable.designer.cs">
+      <DependentUpon>202001151439331_FixingMovietable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151446444_FixingMovietableDElete.cs" />
+    <Compile Include="Migrations\202001151446444_FixingMovietableDElete.designer.cs">
+      <DependentUpon>202001151446444_FixingMovietableDElete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151449592_FixingMovietableDEleteAddWithoutVAlidation.cs" />
+    <Compile Include="Migrations\202001151449592_FixingMovietableDEleteAddWithoutVAlidation.designer.cs">
+      <DependentUpon>202001151449592_FixingMovietableDEleteAddWithoutVAlidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151551596_FixingMovietableDEleteAddWithoutVAlidation1.cs" />
+    <Compile Include="Migrations\202001151551596_FixingMovietableDEleteAddWithoutVAlidation1.designer.cs">
+      <DependentUpon>202001151551596_FixingMovietableDEleteAddWithoutVAlidation1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151630488_AddGenreUpgrade.cs" />
+    <Compile Include="Migrations\202001151630488_AddGenreUpgrade.designer.cs">
+      <DependentUpon>202001151630488_AddGenreUpgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151735444_RelemoveElementsFormDatabase.cs" />
+    <Compile Include="Migrations\202001151735444_RelemoveElementsFormDatabase.designer.cs">
+      <DependentUpon>202001151735444_RelemoveElementsFormDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001151801423_AddRequireAttributeToMovies.cs" />
+    <Compile Include="Migrations\202001151801423_AddRequireAttributeToMovies.designer.cs">
+      <DependentUpon>202001151801423_AddRequireAttributeToMovies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -402,6 +430,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001151254457_AddBackMoviesTable.resx">
       <DependentUpon>202001151254457_AddBackMoviesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151439331_FixingMovietable.resx">
+      <DependentUpon>202001151439331_FixingMovietable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151446444_FixingMovietableDElete.resx">
+      <DependentUpon>202001151446444_FixingMovietableDElete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151449592_FixingMovietableDEleteAddWithoutVAlidation.resx">
+      <DependentUpon>202001151449592_FixingMovietableDEleteAddWithoutVAlidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151551596_FixingMovietableDEleteAddWithoutVAlidation1.resx">
+      <DependentUpon>202001151551596_FixingMovietableDEleteAddWithoutVAlidation1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151630488_AddGenreUpgrade.resx">
+      <DependentUpon>202001151630488_AddGenreUpgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151735444_RelemoveElementsFormDatabase.resx">
+      <DependentUpon>202001151735444_RelemoveElementsFormDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001151801423_AddRequireAttributeToMovies.resx">
+      <DependentUpon>202001151801423_AddRequireAttributeToMovies.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
