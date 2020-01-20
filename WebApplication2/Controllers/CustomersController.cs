@@ -47,6 +47,17 @@ namespace WebApplication2.Controllers
 
             return View(customers);
         }
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var ViewModel = new CustomerFormViewModel
+            {
+                Customer = new Customer(),
+                MembershipTypes = membershipTypes
+            };
+
+            return View("CustomerForm", ViewModel);
+        }
         /*to make sure that this action only runs as a post
          * MODEL BINDING *
          MVC framework will bind Customer to the request data
@@ -66,6 +77,7 @@ namespace WebApplication2.Controllers
                 return View("CustomerForm", viewModel);
             }
             if (customer.Id == 0)
+
                 _context.Customers.Add(customer);
             else
             {
