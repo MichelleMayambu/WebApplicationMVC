@@ -20,12 +20,11 @@ namespace WebApplication2.Models
         public string Gender { get; set; }
 
         public bool IsSubscribedToNewsLetter { get; set; }
-        //Navigattion property associate customer class with MembershipType class
 
-       
+        //Navigattion property associate customer class with MembershipType class 
         public MembershipType MembershipType { get; set; }
+       
         //entity framework recoginzes this Id convention and treats property as foreign key
-
         [Display(Name = "Membership Type")]
         public byte MembershipTypeId { get; set; }
        

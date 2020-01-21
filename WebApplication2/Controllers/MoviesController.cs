@@ -48,6 +48,7 @@ namespace WebApplication2.Controllers
         }
        
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)
         {
             //Model.State to check validation from the model

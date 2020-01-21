@@ -292,6 +292,10 @@
     <Compile Include="Migrations\202001201024427_AddRequiredToFieldsInMovieDbSet.designer.cs">
       <DependentUpon>202001201024427_AddRequiredToFieldsInMovieDbSet.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001210946452_AddedRangePropertyToNumberInStock.cs" />
+    <Compile Include="Migrations\202001210946452_AddedRangePropertyToNumberInStock.designer.cs">
+      <DependentUpon>202001210946452_AddedRangePropertyToNumberInStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GenreType.cs" />
@@ -459,6 +463,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001201024427_AddRequiredToFieldsInMovieDbSet.resx">
       <DependentUpon>202001201024427_AddRequiredToFieldsInMovieDbSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001210946452_AddedRangePropertyToNumberInStock.resx">
+      <DependentUpon>202001210946452_AddedRangePropertyToNumberInStock.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
