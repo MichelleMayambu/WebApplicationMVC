@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -20,10 +21,17 @@ namespace WebApplication2.Controllers.Api
             _context = new MyDBContext();
         }
         //GET /api/Customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
+            var customerDtos = _context.Customers
+               .Include(c => c.MembershipType)
+               .ToList()
+               .Select(Mapper.Map<Customer, CustomerDto>);
 
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+
+            return Ok(customerDtos); 
+           
+
         }
         //GET /api/Customers/1
         public CustomerDto GetCustomer( int id)
@@ -37,10 +45,11 @@ namespace WebApplication2.Controllers.Api
         }
         // POST /api/customers
         [HttpPost]
-        public CustomerDto CreateCustomer(CustomerDto customerDto)
+        public IHttpActionResult CreateCustomer(CustomerDto customerDto)
         {
             if (!ModelState.IsValid)
-                throw new HttpResponseException(HttpStatusCode.BadRequest);
+                return BadRequest();
+               
 
             var customer = Mapper.Map<CustomerDto, Customer>(customerDto);
             _context.Customers.Add(customer);
@@ -48,7 +57,8 @@ namespace WebApplication2.Controllers.Api
 
             customerDto.Id = customer.Id;
 
-            return customerDto;
+            //use 
+            return Created(new Uri(Request.RequestUri + "/" + customer.Id),customerDto);
         }
         // PUT /api/customers/1
         [HttpPut]

@@ -185,6 +185,7 @@
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="DAL\Initializer.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\MembershipTypeDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -311,6 +312,10 @@
     <Compile Include="Migrations\202001210946452_AddedRangePropertyToNumberInStock.cs" />
     <Compile Include="Migrations\202001210946452_AddedRangePropertyToNumberInStock.designer.cs">
       <DependentUpon>202001210946452_AddedRangePropertyToNumberInStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001221034317_rmovedAttributeMin18years.cs" />
+    <Compile Include="Migrations\202001221034317_rmovedAttributeMin18years.designer.cs">
+      <DependentUpon>202001221034317_rmovedAttributeMin18years.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -482,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001210946452_AddedRangePropertyToNumberInStock.resx">
       <DependentUpon>202001210946452_AddedRangePropertyToNumberInStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001221034317_rmovedAttributeMin18years.resx">
+      <DependentUpon>202001221034317_rmovedAttributeMin18years.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

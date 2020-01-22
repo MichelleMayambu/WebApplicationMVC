@@ -16,7 +16,9 @@ namespace WebApplication2.App_Start
         {
             Mapper.CreateMap<Customer, CustomerDto>();
             Mapper.CreateMap<CustomerDto, Customer >();
-
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
         }
     }
+
+  
 }
