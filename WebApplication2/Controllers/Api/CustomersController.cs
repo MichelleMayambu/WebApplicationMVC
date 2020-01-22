@@ -62,13 +62,7 @@ namespace WebApplication2.Controllers.Api
             if(customerInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            /*want Dto to able to track changes in our object 
-             hence we have commented out the code that did that and auto mapper 
-             makes our lives easier*/
             Mapper.Map(customerDto, customerInDb);
-            //customerInDb.Name = customerDto.Name;
-            //customerInDb.BirthDate = customerDto.BirthDate;
-            //customerInDb.IsSubscribedToNewsLetter = customerDto.IsSubscribedToNewsLetter;
 
             _context.SaveChanges();
         }
