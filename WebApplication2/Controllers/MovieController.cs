@@ -11,11 +11,11 @@ using WebApplication2.DAL;
 
 namespace WebApplication2.Controllers
 {
-    public class MoviesController : Controller
+    public class MovieController : Controller
     {
         private MyDBContext _context;
 
-        public MoviesController()
+        public MovieController()
         {
             _context = new MyDBContext();
         }

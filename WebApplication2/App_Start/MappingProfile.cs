@@ -14,9 +14,20 @@ namespace WebApplication2.App_Start
          mapper from customer to Dto and Dto to Customer*/
          public MappingProfile()
         {
+            //Customers
             Mapper.CreateMap<Customer, CustomerDto>();
-            Mapper.CreateMap<CustomerDto, Customer >();
+            Mapper.CreateMap<CustomerDto, Customer >().ForMember(c => c.Id, opt => opt.Ignore()); 
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+
+            //Movies
+            Mapper.CreateMap<Movie, MovieDto>();
+            Mapper.CreateMap<MovieDto, Movie>().ForMember(c => c.Id, opt => opt.Ignore()); 
+            Mapper.CreateMap<GenreType, GenreTypeDto>();
+            Mapper.CreateMap<GenreTypeDto, GenreType>();
+
+          
+
         }
     }
 
