@@ -10,12 +10,12 @@ using WebApplication2.ViewModels;
 
 namespace WebApplication2.Controllers
 {
-    public class CustomersController : Controller
+    public class CustomerController : Controller
     {
         private MyDBContext _context; //access context class
         // GET: Customers/CustomerList
 
-            public CustomersController()
+            public CustomerController()
         {
             _context = new MyDBContext();
 
