@@ -42,17 +42,20 @@ else
 {
     <script>
         $(document).ready(function () {
-            $("#customers .js-delete").on("click", function () {
-                var button =$(this)
-                if (confirm("are you sure you want to deete the customer?")) {
-                    $.ajax({
-                        url: "/api/customers/" + button.attr("data-customer-id"),
-                        method: "DELETE",
-                        Successs: function () {
-                            button.parents("tr").remove();
-                        }
-                    })
-                }
+            $("#customers").on("click", "js-delete" ,function () {
+                var button = $(this)
+                bootbox.confirm("are you sure you want delete customer?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/customers/" + button.attr("data-customer-id"),
+                            method: "DELETE",
+                            Successs: function () {
+                                button.parents("tr").remove();
+                            }
+                        })
+                    }
+                })
+               
             })
         })
 
