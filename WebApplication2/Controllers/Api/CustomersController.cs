@@ -23,8 +23,7 @@ namespace WebApplication2.Controllers.Api
         //GET /api/Customers
         public IHttpActionResult GetCustomers()
         {
-            var customerDtos = _context.Customers
-               .Include(c => c.MembershipType)
+            var customerDtos = _context.Customers.Include(c => c.MembershipType)
                .ToList()
                .Select(Mapper.Map<Customer, CustomerDto>);
 
