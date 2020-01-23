@@ -13,7 +13,7 @@ namespace WebApplication2.Controllers
     public class CustomerController : Controller
     {
         private MyDBContext _context; //access context class
-        // GET: Customers/CustomerList
+        
 
             public CustomerController()
         {
@@ -37,6 +37,7 @@ namespace WebApplication2.Controllers
 
             return View(viewmodel);
         }
+        // GET: Customers/CustomerList
         public ActionResult CustomerList()
         {
             /*Include() in order to accomodate the reference class membership

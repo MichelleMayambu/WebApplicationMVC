@@ -26,7 +26,7 @@ namespace WebApplication2.Controllers
         {
             _context.Dispose();
         }
-
+        // GET: Movies/Random 
         public ActionResult Random()
         {
 
