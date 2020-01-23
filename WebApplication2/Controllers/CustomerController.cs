@@ -40,13 +40,8 @@ namespace WebApplication2.Controllers
         // GET: Customers/CustomerList
         public ActionResult CustomerList()
         {
-            /*Include() in order to accomodate the reference class membership
-             so that the customer view can have access to it's entities 
-             ToList() added in order to iterate through list*/
-            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
-          
-
-            return View(customers);
+           
+            return View();
         }
         public ActionResult New()
         {
