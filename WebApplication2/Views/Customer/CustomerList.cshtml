@@ -7,13 +7,13 @@
 
 <h2>Customers</h2>
 
-    <table id="customers" class=" col-md-12 table table-bordered table-hover">
+    <table id="customers" class="  table table-bordered table-hover">
         <thead>
             <tr>
-                <th>Customer</th>
-                <th>Membership Type</th>
-                <th>Discount Rate</th>
-                <th>Delete</th>
+                <th class="">Customer</th>
+                <th class="">Membership Type</th>
+               
+                <th class="">Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -43,28 +43,26 @@
                     {
                         data: "id",
                         render: function (data) {
-                            return "<button class='btn-link js-delete' data-customer-id=" + data + ">Delete</button>";
+                            return "<button class='btn-link delete' data-customer-id=' + data + '>Delete</button>";
                         }
                     }
                 ]
             });
 
-            $("#customers").on("click", "js-delete" ,function () {
-                var button = $(this)
-                bootbox.confirm("are you sure you want delete customer?", function (result) {
-                    if (result) {
-                        $.ajax({
-                            url: "/api/customers/" + button.attr("data-customer-id"),
-                            method: "DELETE",
-                            Successs: function () {
-                                button.parents("tr").remove();
-                            }
-                        })
-                    }
-                })
-               
+            $("#customers").on("click", "delete", function () {
+                var button = $(this);
+                if (confirm("are you sure you want to deete the customer?")) {
+                    $.ajax({
+                        url: "/api/customers/" + button.attr("data-customer-id"),
+                        method: "DELETE",
+                        Successs: function () {
+                            button.parents("tr").remove();
+                        }
+                    })
+                }
             })
         })
+       
 
     </script>
 }

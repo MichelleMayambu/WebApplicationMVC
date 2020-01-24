@@ -12,8 +12,8 @@ namespace WebApplication2
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
                       "~/Scripts/bootbox.js",
-                      "~/Scripts/datatables/jquery.datatables.js",
-                      "~/Scripts/datatables/datatables.bootstrap.js"));
+                      "~/Scripts/respond.js",
+                      "~/Scripts/datatables/jquery.datatables.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -26,9 +26,9 @@ namespace WebApplication2
           
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-pulse.css",
-                        "~/Content/datatables/css/datatables.bootstrap.css",
-                      "~/Content/site.css"
-                    ));
+                      "~/Content/datatables/css/jquery.datatables.css",
+                       "~/Content/DataTables/css/dataTables.bootstrap4.css",
+                      "~/Content/site.css" ));
         }
     }
 }

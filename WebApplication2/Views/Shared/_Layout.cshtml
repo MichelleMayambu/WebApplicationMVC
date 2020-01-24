@@ -10,7 +10,7 @@
 </head>
 <body>
     @Html.Partial("_NavBar")
-    <div class="container body-content">
+    <div class="col-md-12 container body-content">
         @RenderBody()
         <hr />
         <footer>
@@ -19,7 +19,7 @@
     </div>
 
     @Scripts.Render("~/bundles/lib")
-  
+    @Scripts.Render("~/Content/css")
     @RenderSection("scripts", required: false)
 </body>
 </html>
