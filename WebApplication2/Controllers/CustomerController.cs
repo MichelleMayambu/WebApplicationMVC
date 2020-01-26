@@ -90,7 +90,7 @@ namespace WebApplication2.Controllers
            on the form*/
            
             _context.SaveChanges();
-            return RedirectToAction("CustomerList", "Customers");
+            return RedirectToAction("CustomerList", "Customer");
         } 
        public ActionResult Edit(int id)
         {
