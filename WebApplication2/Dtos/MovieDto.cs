@@ -26,10 +26,11 @@ namespace WebApplication2.Dtos
         [Range(1, 20)]
         public int NumberInStock { get; set; }
 
+        public int GenreTypeId { get; set; }
 
         public GenreTypeDto GenreType { get; set; }
 
-        public int GenreTypeId { get; set; }
+       
 
     }
 }

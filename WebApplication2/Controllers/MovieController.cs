@@ -80,7 +80,7 @@ namespace WebApplication2.Controllers
 
                 _context.SaveChanges();
 
-                 return RedirectToAction("Random", "Movies");
+                 return RedirectToAction("Random", "Movie");
         }
         public ActionResult Edit(int id)
         {
