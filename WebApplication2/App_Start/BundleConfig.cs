@@ -9,8 +9,8 @@ namespace WebApplication2
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/lib").Include(
-                        "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js",
+                         "~/Scripts/jquery-{version}.js",
                       "~/Scripts/bootbox.js",
                       "~/Scripts/respond.js",
                       "~/Scripts/datatables/jquery.datatables.js"));
@@ -26,6 +26,7 @@ namespace WebApplication2
           
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-pulse.css",
+                      "~/Content/bootstrap.css",
                       "~/Content/datatables/css/jquery.datatables.css",
                        "~/Content/DataTables/css/dataTables.bootstrap4.css",
                       "~/Content/site.css" ));

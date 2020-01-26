@@ -25,7 +25,8 @@
 {
     <script>
         $(document).ready(function () {
-            $("#customers").DataTable({
+            //$("#customers").DataTable({
+            var table = $("#customers").DataTable({
                 ajax: {
                     url: "/api/customers",
                     dataSrc : ""
@@ -34,7 +35,7 @@
                     {
                         data: "name",
                         render: function (data, type, customer) {
-                            return "<a href='/customers/edit/" + customer.id + "'>" + customer.name + "</a>";
+                            return "<a href='/customer/edit/" + customer.id + "'>" + customer.name + "</a>";
                         }
                     },
                     {
@@ -43,26 +44,28 @@
                     {
                         data: "id",
                         render: function (data) {
-                            return "<button class='btn-link delete' data-customer-id=' + data + '>Delete</button>";
+                            return "<button class='btn-link delete' data-customer-id=" + data + ">Delete</button>";
                         }
                     }
                 ]
             });
 
-            $("#customers").on("click", "delete", function () {
-                var button = $(this);
-                if (confirm("are you sure you want to deete the customer?")) {
+            $("#customers").on("click", ".delete", function () {
+                var button = $(this).attr("data-customer-id");
+                if (confirm("are you sure you want to deete the customer?")) {         
                     $.ajax({
-                        url: "/api/customers/" + button.attr("data-customer-id"),
+                        url: "/api/customers/" + button,
                         method: "DELETE",
-                        Successs: function () {
-                            button.parents("tr").remove();
+                        Successs: function () { 
+                            
+                            table.row(buttons.parents("tr")).remove().draw();
+                            
+
                         }
                     })
                 }
             })
         })
        
-
     </script>
 }
